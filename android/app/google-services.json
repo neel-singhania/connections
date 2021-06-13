@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "232222268001",
+    "firebase_url": "https://connections-inc-e2cca.firebaseio.com",
+    "project_id": "connections-inc-e2cca",
+    "storage_bucket": "connections-inc-e2cca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232222268001:android:67db05c3f9b5de19e6e820",
+        "android_client_info": {
+          "package_name": "com.example.connections_inc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232222268001-j93uf622vclfnpcv3j00molea9fki6a1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4Q8BXK-zXzOXBxzNTtD25qiLm4ysoUzs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232222268001-j93uf622vclfnpcv3j00molea9fki6a1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

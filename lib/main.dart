@@ -1,30 +1,22 @@
+import 'package:connections_inc/bloc/authentication/authentication_bloc.dart';
+import 'package:connections_inc/bloc/blocDelegate.dart';
+import 'package:connections_inc/repository/userRepository.dart';
+import 'package:connections_inc/ui/pages/home.dart';
 import 'package:flutter/material.dart';
-import 'package:mate_up/login.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'bloc/authentication/authentication_event.dart';
 
-import 'signup.dart';
-import 'profile1.dart';
-import 'profile2.dart';
-import 'loading.dart';
-//import 'intraextra.dart';
-import 'testpage.dart';
-void main() => runApp(new MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp
+  ]);
+  final UserRepository _userRepository = UserRepository();
+  BlocSupervisor.delegate = SimpleBlocDelegate();
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: <String, WidgetBuilder>{
-        '/loading': (BuildContext context) => new Loading(),
-        '/login': (BuildContext context) => new LoginPage(),
-        '/signup': (BuildContext context) => new SignupPage(),
-        '/profile1': (BuildContext context) => new ProfilePage(),
-        '/profile2': (BuildContext context) => new Profile2Page(),
-        '/testpage': (BuildContext context) => new IntraExtra(),
-
-      },
-      home: Loading()
-    );
-  }
+  runApp(BlocProvider(
+      create: (context) => AuthenticationBloc(userRepository: _userRepository)
+        ..add(AppStarted()),
+      child: Home(userRepository: _userRepository,)));
 }
-

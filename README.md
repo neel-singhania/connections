@@ -1,4 +1,4 @@
-# mate_up
+# connections_inc
 
 A new Flutter application.
 
